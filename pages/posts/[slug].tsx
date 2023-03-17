@@ -2,16 +2,16 @@ import ErrorPage from 'next/error'
 import Head from 'next/head'
 import {useRouter} from 'next/router'
 
-import Container from 'components/container'
-import Header from 'components/header'
-import Layout from 'components/layout'
-import PostBody from 'components/post-body'
-import PostHeader from 'components/post-header'
-import PostTitle from 'components/post-title'
-import type PostType from 'interfaces/post'
-import {getAllPosts, getPostBySlug} from 'lib/api'
-import {CMS_NAME} from 'lib/constants'
-import markdownToHtml from 'lib/markdownToHtml'
+import Container from '@/components/container'
+import Header from '@/components/header'
+import Layout from '@/components/layout'
+import PostBody from '@/components/post-body'
+import PostHeader from '@/components/post-header'
+import PostTitle from '@/components/post-title'
+import type PostType from '@/interfaces/post'
+import {getAllPosts, getPostBySlug} from '@/lib/api'
+import {CMS_NAME} from '@/lib/constants'
+import markdownToHtml from '@/lib/markdownToHtml'
 
 type Props = {
   post: PostType
@@ -19,7 +19,7 @@ type Props = {
   preview?: boolean
 }
 
-export default function Post({post, morePosts, preview}: Props) {
+export default function Post({post, preview}: Props) {
   const router = useRouter()
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !post?.slug) {

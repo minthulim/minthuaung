@@ -1,15 +1,15 @@
-import type Post from 'interfaces/post'
+import type Post from '@/interfaces/post'
 import PostPreview from './post-preview'
 
 type Props = {
   posts: Post[]
 }
 
-const MoreStories = ({posts}: Props) => {
+const BlogPosts = ({posts}: Props) => {
   return (
     <section>
-      <h2 className="mb-8 text-5xl font-bold leading-tight tracking-tighter md:text-7xl">
-        More Stories
+      <h2 className="mb-8 text-3xl font-bold">
+        Blog Posts
       </h2>
       <div className="mb-32 grid grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-16 md:gap-y-32 lg:gap-x-32">
         {posts.map(post => (
@@ -28,4 +28,4 @@ const MoreStories = ({posts}: Props) => {
   )
 }
 
-export default MoreStories
+export default BlogPosts
