@@ -10,6 +10,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(rehypeDocument)
     .use(rehypePrettyCode, {
       theme: 'github-dark',
+      keepBackground: true,
     })
     .use(rehypeStringify)
     .process(markdown)

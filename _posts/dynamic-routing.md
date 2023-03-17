@@ -33,7 +33,7 @@ morbi tincidunt augue interdum velit euismod.
 
 ![Image Test](/assets/blog/hello-world/cover.jpg)
 
-```js title="test.tsx" {1-3}
+```js
 function codeTest() {
   console.log("this is code.)
 }
