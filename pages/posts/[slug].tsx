@@ -19,14 +19,14 @@ type Props = {
   preview?: boolean
 }
 
-export default function Post({post, preview}: Props) {
+export default function Post({post}: Props) {
   const router = useRouter()
   const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
+    <Layout>
       <Container>
         <Header />
         {router.isFallback ? (
