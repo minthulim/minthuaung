@@ -6,13 +6,13 @@ import remarkRehype from 'remark-rehype'
 
 export default async function markdownToHtml(markdown: string) {
   const result = await remark()
-    .use(remarkRehype)
+    .use(remarkRehype, {allowDangerousHtml: true})
     .use(rehypeDocument)
     .use(rehypePrettyCode, {
       theme: 'github-dark',
       keepBackground: true,
     })
-    .use(rehypeStringify)
+    .use(rehypeStringify, {allowDangerousHtml: true})
     .process(markdown)
   return result.toString()
 }
